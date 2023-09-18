@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>버튼 만들기</title>
+</head>
+<body>
+	<form>
+		search : <input type="search" name="search" placeholder="홍길동"><br>
+		text : <input type="text" id="name1" name="name" autofocus><br>
+		number : <input type="number" name="n1" min="1" max="10" value="1"><br>
+		<input type="reset" value="초기화">
+		<button type="reset">초기화</button><br>
+		<input type="submit" value="submit">
+		<button type="submit">submit</button><br>
+		<!-- submit :form에 입력한 데이터를 서버로 전송 후, action에 지정한 페이지 요청 -->
+		<button>아무런 태그없는 전송 버튼</button><br>
+		<input type="button" value="일반버튼" onclick="alert('js 함수와 연결해 이벤트 처리')"><br>
+		<button type="button" onclick="alert('클릭하지 마라고!')">누르지 마시오</button><br>
+		
+		<!-- 둘다 submit임 -->
+		<input type="image" src="../img/submitbutton.png" width="100">
+		<button type="submit">
+			<img src="../img/submitbutton.png" width="200">
+		</button>
+		
+		
+		
+	</form>
+	<br>
+	<button onclick="alert('js 함수와 연결해 이벤트 처리')">외부에 있는 버튼</button>
+</body>
+</html>

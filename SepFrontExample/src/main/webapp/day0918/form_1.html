@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form1</title>
+</head>
+<body>
+	<!-- id속성 : 현재 문서에서 태그 구분 
+		name 속성 : 데이터 전송시 입력데이터를 구분하기위한 이름(서버로 전달) , 중복가능함.
+		input에 값을 입력하지 않고 전송시 ""이 전송된다. (null아님)
+		-->
+	<form method="get" name="form1" action="#">
+		<fieldset>
+			<legend>이름/아이디 입력</legend>
+		<label for="name">이름 : </label>
+		<input type="text" id="name" name="name">
+		<br>
+		<label>아이디 : <input type="text" name="id"></label>
+		</fieldset>
+		<input type="submit" value="전송">
+		
+	</form>
+
+
+</body>
+</html>

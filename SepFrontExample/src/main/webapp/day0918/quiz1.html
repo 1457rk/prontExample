@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>프런트엔드 개발자 지원서</title>
+<style> /* css코드 */
+#container {
+	width: 520px; /*너비 520px*/
+	border: 1px solid black; /*경계선 1px 실선 검정*/
+	padding: 20px 40px; /* 컨텐츠와 경계선 사이에 여백 추가*/
+	margin: 0 auto;  /* 중앙배치 */
+}
+
+fieldset {
+	margin-bottom: 15px; /*바닥으로 부터 15px 위로*/
+}
+
+legend {
+	font-weight: bold; /*글씨를 굵게*/
+}
+
+ul {
+	list-style-type: none; /* li앞에 붙는 불릿(○)사용 안함 */
+}
+
+li {
+	line-height: 30px; /*줄 간격*/
+}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>프런트엔드 개발자 지원서</h1>
+		<p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+		<hr>
+		<form>
+			
+			
+			<legend>개인정보</legend>
+			<ul>
+				<li>
+					이름
+					<input type="text" name="name" placeholder="공백없이 입력하세요" autofocus required>
+				</li>
+				<li>
+					연락처
+					<select name="fristtel">
+						<option selected value="010">010</option>
+						<option value="070">070</option>
+						<option value="011">011</option>
+						<option value="012">012</option>
+					</select>
+					<input type="text" name="secondtel" size="5">
+					-
+					<input type="text" name="thirdel" size="5">
+				</li>
+				<li>
+					남<input type="radio" name="gender" value="male">
+					여<input type="radio" name="gender" value="female">
+				</li>
+			
+			
+			</ul>
+			
+			
+			
+			<legend>지원분야</legend>
+			<ul>
+				<li>
+					<input type="checkbox" name="apply" value="web_publishing">웹 퍼블리싱
+				</li>
+				<li>
+					<input type="checkbox" name="apply" value="web_application">웹 애플리케이션 개발
+				</li>
+				<li>
+					<input type="checkbox" name="apply" value="environment">개발 환경 개선
+				</li>
+			</ul>
+			
+			
+			
+			<legend>지원동기</legend>
+			<br>
+			<textarea name="memo" cols="60" rows="5" placeholder="본사 지원 동기를 간략히 써 주세요."></textarea><br>
+			<input type="submit" value="접수하기">
+			<input type="reset" value="다시 쓰기">
+			
+			
+			
+		</form>
+	</div>
+</body>
+</html>

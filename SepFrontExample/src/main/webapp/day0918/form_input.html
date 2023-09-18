@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input</title>
+</head>
+<body>
+	<form>
+		<table border="1">
+			<tr><td>아이디</td><td><input type="text" name="id" value="아이디" 
+			size="20"maxlength="5">
+			<input type="hidden" name="hidden" value="숨겨서 보냄">
+			</td></tr>
+			<tr><td>비밀번호</td><td><input type="password" name="pwd"></td></tr>
+			<tr><td>라디오버튼</td><td>
+				<input type="radio" id="20" value="20대" name="age" checked><!-- 
+				--><label for="20">20대</label>
+				<input type="radio" id="30" value="30대" name="age"><!-- 
+				--><label for="30">30대</label>
+				<input type="radio" id="40" value="40대" name="age"><!-- 
+				--><label for="40">40대</label>	
+				<input type="radio" name="gender" value="m" checked><!-- 
+				--><label for="m">남</label>
+				<input type="radio" name="gender" value="f"><!-- 
+				--><label for="f">여</label>
+			</td></tr>
+			<tr><td>좋아하는 동물</td><td>
+				<input type="checkbox" id="cat" name="pet" value="cat" checked>
+				<label for="cat">고양이</label>
+				<input type="checkbox" id="dog" name="pet" value="dog">
+				<label for="dog">개</label>
+				<input type="checkbox" id="fish" name="pet" value="fish">
+				<label for="fish">물고기</label>
+			</td></tr>
+			<tr><td>얼굴사진첨부</td><td>
+				<input type="file" name="file" multiple accept="image/jpeg">
+				
+			</td></tr>
+			
+			
+			<tr><td colspan="2"><input type="submit" value="전송" </td></tr>
+			
+		</table>
+	</form>
+	
+	
+	
+
+</body>
+</html>

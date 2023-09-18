@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>progress</title>
+</head>
+
+<body>
+	<h4>진행 상태 보여주기</h4>
+	<progress value="30" max="100"></progress>
+	<progress value="50" max="100"></progress>
+	<progress value="50" max="60"></progress>
+	<input type="submit" value="전송">
+
+	<h4>meter</h4>
+	<label>점유율 80%</label>
+	<meter value="0.8"></meter><br> <!-- 0 ~ 1 -->
+	<label>점유율 64%</label>
+	<meter min="0" max="100" value="64"></meter><br>
+	<label>허용범위 초과</label>
+	<meter min="1024" max="10240" low="2048" high="8192" value="1999"></meter>
+	<label>최적값 지정</label>
+	<meter value="0.9" optimum="0.8" low="0.3" high="0.7"></meter>
+	<!--적정값optimum이 low보다 낮으면 값이 작을수록 좋은 값,
+	적정값optimum이 high보다 높으면 값이 클수록 좋은 값이다. -->
+
+
+
+
+</body>
+
+</html>
