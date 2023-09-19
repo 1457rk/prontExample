@@ -45,12 +45,12 @@
 			<legend>개인 정보</legend>
 			<ul>
 				<li>
-					<label class="title">이름</label>
-					<input type="text" name="name" placeholder="여백없이 입력" required>	
+					<label class="title" for="name">이름</label>
+					<input type="text" name="name" id="name" placeholder="여백없이 입력" required>	
 				</li>
 				<li>
-					<label class="title">연락처</label>		
-					<input type="tel" name="tel" placeholder="연락가능한 번호" 
+					<label class="title" for="tel">연락처</label>		
+					<input type="tel" name="tel" id="tel" placeholder="연락가능한 번호" 
 								pattern="010-[0-9]{4}-[0-9]{4}" title="010-####-####" required>	
 				</li>
 			</ul>			
@@ -60,17 +60,17 @@
 			<legend>배송지 정보</legend>
 			<ul>
 				<li>
-					<label class="title">주소 </label>
-					<input type="text" name="address" size="35" required><br>
+					<label class="title" for="address">주소 </label>
+					<input type="text" name="address" id="address" size="35" required>
 				</li>
 				<li>
-					<label class="title">전화번호 </label>
-					<input type="tel" name="destinationtel"pattern="010-[0-9]{4}-[0-9]{4}"
-							title="010-####-####" required><br>
+					<label class="title" for="destinationtel">전화번호 </label>
+					<input type="tel" name="destinationtel" id="destinationtel" pattern="010-[0-9]{4}-[0-9]{4}"
+							title="010-####-####" required>
 				</li>
 				<li>
-					<label class="title">메모 </label>	
-					<textarea name="memo" cols="40" rows="4"></textarea>	
+					<label class="title" for="memo">메 모 </label>	
+					<textarea name="memo" id="memo" cols="40" rows="4"></textarea>	
 				<li>
 			</ul>
 		</fieldset>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	/*li span{color: blue;}*/
+	/*li > span{color: blue;}*/
+	/*ul > li{color: crimson;}*/
+	/*#second + li{color: darkorange;}*/
+	#second ~ li{color: darkorange;}
+	
+	li * {color: deeppink;}/*li 안에 어떠한 태그가 있으면 핑크로 지정*/
+	p .a{color: blue;}/*한칸을 띄면 자식이라는 듯*/
+	p.a{color: green;}/*한칸을 띄지 않았으니 자신이 class="a" 여야 함*/
+	
+	
+</style>
+</head>
+<body>
+	
+	<p><a class="a" href="#">TEXT</a></p>
+	<p class="a">TEXT</p>
+	
+	
+	<ul>
+		<li id="first"><strong>text<span>text</span>text</strong>texttext</li>
+		<li id="second"><span>text</span>texttexttexttext</li>
+		<li id="third">texttexttexttexttext</li>
+		<li id="fourth">texttexttexttexttext</li>
+	</ul>
+	
+	
+</body>
+</html>

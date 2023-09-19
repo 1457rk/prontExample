@@ -9,32 +9,48 @@
 
 <body>
 	<h1>레드향 주문하기</h1>
-	<form>
 	<div id="container">
+	<form>	
 		<fieldset>
 			<legend>상품 선택</legend>
-			<b>주문할 상품을 선택해 주세요</b>
+			<p><b>주문할 상품을 선택해 주세요</b></p>
 			<ul>
-				<li><input type="checkbox" name="orderpro" value="gift3kg"> 선물용 3kg
-				<input type="number" name="gift3kgea" value="gift3kgea" size="5" max="5">개 (최대 5개)
+				<li>
+					<input type="checkbox" name="orderpro" value="gift3kg" id="gift3kg"> 
+					<label for="gift3kg">선물용 3kg</label>
+					<input type="number" name="gift3kgea" value="gift3kgea" size="5" min="0" max="5">개 
+					<small>(최대 5개)</small>
 				</li>
-				<li><input type="checkbox" name="orderpro" value="gift5kg"> 선물용 5kg
-				<input type="number" name="gift5kgea" value="gift5kgea" size="5" max="3">개 (최대 3개)
+				<li>
+					<input type="checkbox" name="orderpro" value="gift5kg" id=gift5kg> 
+					<label for="gift5kg">선물용 5kg</label>
+					<input type="number" name="gift5kgea" value="gift5kgea" size="5" min="0" max="3">개 
+					<small>(최대 3개)</small>
 				</li>
-				<li><input type="checkbox" name="orderpro" value="home3kg"> 가정용 3kg
-				<input type="number" name="home3kgea" value="home3kgea" size="5" max="5">개 (최대 5개)
+				<li>
+					<input type="checkbox" name="orderpro" value="home3kg" id=home3kg> 
+					<label for="home3kg">가정용 3kg</label>
+					<input type="number" name="home3kgea" value="home3kgea" size="5" min="0" max="5">개 
+					<small>(최대 5개)</small>
 				</li>
-				<li><input type="checkbox" name="orderpro" value="home5kg"> 가정용 5kg
-				<input type="number" name="home5kgea" value="home5kgea" size="5" max="3">개 (최대 3개)
+				<li>
+					<input type="checkbox" name="orderpro" value="home5kg" id=home5kg > 
+					<label for="home5kg">가정용 5kg</label>
+					<input type="number" name="home5kgea" value="home5kgea" size="5" min="0" max="3">개 
+					<small>(최대 3개)</small>
 				</li>
 			</ul>
 			<b>포장선택</b>
 			<ul>
 				<li>
+					<label>
 					<input type="radio" name="package" value="p_yes">선물 포장
+					</label>
 				</li>
 				<li>
+					<label>
 					<input type="radio" name="package" value="p_no" checked>선물 포장 안 함
+					</label>
 				</li>
 			</ul>
 		</fieldset>
@@ -57,18 +73,19 @@
 					title="010-####-####" placeholder="010-0000-0000" required>
 				</li>
 				<li>
-					배송지정<input type="date" name="date" required>(주문일로부터 최소 3일 이후)
+					배송지정<input type="date" name="date" required><small>(주문일로부터 최소 3일 이후)</small>
 				</li>
 				<li>
 					메모<textarea name="memo" cols="40" rows="4"></textarea>
 				</li>
 			</ul>
 		</fieldset>
-	</div>
+	
 	<input type="submit" value="주문하기">
 	<input type="reset" value="취소하기" onclick="alert('취소되었습니다.')"> 
 	
 	</form>
+	</div>
 </body>
 
 </html>
