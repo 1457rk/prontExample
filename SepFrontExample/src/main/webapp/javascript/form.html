@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input id="n1" placeholder="여기에 입력하세요">
+<input type="button" value="입력" onclick="inputValue()">
+<script>
+	function inputValue(){
+		let value = document.querySelector("#n1").value;
+		document.write(`입력값 : ${value}`);
+		document.write("페이지가 적재된 후에 write()를 사용하면 다시 씌여집니다.");
+	} 
+	
+</script>
+</body>
+</html>
