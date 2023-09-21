@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>new document</title>
+<SCRIPT>
+	let scope = "global";
+	function f() {
+		//var scope;
+		alert(scope);
+		var scope = "local";//지역변수가 var이 붙어있다면 호이스팅으로 그 변수는 함수의 가장 위로 올라간다.
+		alert(scope);
+	}
+	f();
+	
+	if (true) {
+		  var test = true; //밖에 같은 이름의 전역변수가 없기 때문에 전역변수로 취급되어 밑에서 쓸 수 있다.
+		}
+
+		alert(test); // true(if 문이 끝났어도 변수에 여전히 접근할 수 있음)
+	
+	
+</script>
+</head>
+
+<body>
+
+</body>
+</html>

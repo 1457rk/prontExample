@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>
+  <SCRIPT>
+  let scope = "global";
+  function checkscope(){
+	let scope="local";//지역변수 선언
+	function nested(){
+		 let scope = "nest";//nested()의 지역변수 선언
+		 document.write(scope);//nest출력
+	}
+	document.write(scope);//local 출력
+	nested();//nest출력
+  }
+  checkscope();//nestlocalnest
+  nested();//nest  -> 여기서 에러로 중단이 난다.
+  //함수를 중첩시켜서 사용 가능하긴 한데 중첩되어있는 함수는 그 함수 안에서만 쓸 수 있다.###
+
+  document.write(scope);//global
+ //localnest ->후 오류발생
+  </script>
+ </head>
+ <body></body></html>

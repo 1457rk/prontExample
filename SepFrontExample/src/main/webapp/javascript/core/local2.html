@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>new document</title>
+<SCRIPT>
+	let scope = "global"; //전역변수 scope
+	function checkscope() {
+		scope = "local";//전역변수 scope 앞에 let이 안붙어있기 때문에 함수 밖에 선언했던 것과 같은 같은 변수임
+		document.write(scope+"<br>");
+		myscope = "mylocal";//mylocal 이라는 전역변수가 없기 때문에 전역변수 취급으로 선언됨
+		document.write(myscope+"<br>");//새로운 이름이지만 let이 붙어 있지 않기 때문에 위에서 선언된 것 처럼 인식하는
+		//호이스팅이 작용해서 위에 선언된 것 처럼 인식을 하고 그 선언된 것 처럼 인식 되었던 myscope이 mylocal로 초기화됨.
+	}
+	checkscope();
+	document.write(scope+"<br>");
+	document.write(myscope+"<br>");
+</SCRIPT>
+</head>
+
+<body>
+
+</body>
+</html>

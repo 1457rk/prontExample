@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hoisting</title>
+</head>
+<body>
+	
+	<script>
+		let x = 10;
+		test();
+		
+		
+		
+		
+		function test() {
+			alert(x);
+			alert(y); //undefined : var y가 hoisting으로 변수가 있는 것 처럼 인식이 된다. 단 초기화는 안되어있다.
+			//alert(z); // let은 hoisting이 되지 않아서 오류가 뜬다.
+			var y = 20;
+			let z = 30;
+			
+		}
+		//let x = 10;
+		test();
+		
+	</script>
+
+</body>
+</html>

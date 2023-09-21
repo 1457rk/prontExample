@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>class</title>
+</head>
+<body>
+<script>
+	//class
+	 class Fruit{
+		 constructor(name, price){
+			this.name = name;
+			this.price = price;
+		}
+		 calcPrice(count = 0){
+			 return count * this.price;
+		 };
+	 }
+	 
+	 class Mouse{
+		 constructor(name, price, maker){
+			 this.name = name;
+			 this.price = price;
+			 this.maker = maker;
+		 }
+		calPrice(count = 0){
+				 return count * this.price;
+			 };	 
+			 
+	 }
+	 function test(name, price){
+		 document.write(name+"의 가격은 "+ price +"원 입니다.");
+	 };
+	
+	 
+	let g_pro = new Mouse("g_pro",160000,"logiteck");
+	document.write(g_pro.name+"5개 구매시 가격 : "+g_pro.calPrice(5)+"원<br>");
+	
+	let banana = new Fruit("banana", 1500);
+	document.write(banana.name+" 5개 가격 : "+ banana.calcPrice(5)+"원");
+	document.write("<br>");
+	let melon = new Fruit("melon", 7000);
+	document.write(melon.name+" 2개 가격 : "+ melon.calcPrice(2)+"원");
+	document.write("<br>");
+	setTimeout(test, 3000, g_pro.name, g_pro.price);
+
+</script>
+</body>
+</html>

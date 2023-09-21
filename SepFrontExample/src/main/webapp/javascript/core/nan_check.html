@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		let num = prompt("숫자를 입력하세요");
+		
+		//숫자가 아닌 문자가 하나라도 있으면 -> NaN -> ture
+		//숫자로만 이루어진 문자열 -> NaN -> false
+		
+		if(isNaN(num)){//숫자로 바꿀 수 없니? 
+			let n = parseInt(num); //못바꾸는 것을 강제로 바꾸니까 NaN이 저장됨
+			document.write(n + "<br>");
+			document.write("원래 : "+typeof num);
+		}else{
+			let n = parseInt(num);
+			document.write(n + "<br>");
+			document.write(typeof num+" -> ");
+			document.write(typeof n);
+		}
+		
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>arrow</title>
+</head>
+<body>
+	<script>//람다식과 유사하다.(익명함수)
+		let func = () => {return 10;};//10을 리턴하는 함수를 넣었다. 
+		let number = func();//10이 그대로 number 에 들어갔다. 즉 number은 Integer이다.
+		alert(number);
+		
+		let age = prompt("나이를 입력하세요","숫자를 입력하세요");
+		let welcome = age < 20 ? ()=>alert('미성년자입니다.') : ()=>alert('성인인증 되었습니다.');
+		//한줄밖에 없으면 중괄호를 생략할 수 있다.
+		
+		welcome();
+		
+		let pow = n => {return n*n;}; //매개변수가 하나뿐이라면 소괄호를 생략할 수 있다.
+		alert(pow(5));
+		
+		let pow2 = (n,m) => {
+			let result = n; 
+			for( i = 0; i < m ; i++){
+				result *=n;
+				}
+				return result;
+			}
+		
+		alert(pow2(2,5));
+		
+		
+		
+	</script>
+</body>
+</html>

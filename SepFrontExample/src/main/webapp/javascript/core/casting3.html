@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>casting3</title>
+</head>
+<body>
+	<script>
+		let b = false;
+		document.write(typeof b + "<br>"); //boolean
+		if(b){ //false
+			document.write("ture");
+		}else{
+			document.write("false");
+		}
+		document.write("<br>");
+		
+		
+		let s = "false";
+		document.write(typeof s + "<br>"); // String
+		if(s){// ture
+			document.write("ture");
+		}else{
+			document.write("false");
+		}
+		document.write("<br>");
+		
+		
+		
+		let s2 = eval("false"); //eval은 문자열을 받아서 ""을 때버리고 의미하고 있는 값을 저장시키는 함수이다.
+		document.write(typeof s2 +"<br>");
+		if(s2){
+			document.write("true");
+		}else{
+			document.write("false");
+		}
+		document.write("<br>");
+		
+		
+		let num = '123+45';
+		document.write(num);
+		document.write("<br>");
+		document.write(eval(num));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

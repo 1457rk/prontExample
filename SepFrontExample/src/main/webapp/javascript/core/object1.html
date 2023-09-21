@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		
+		let student = {
+			name : "kim",
+			study : function(){alert(this.name + "공부중!");},
+			play : () => alert( this.name + "노는중")
+			
+		};
+		
+		student.study();
+		
+		for(u in student){ 
+			document.write(u +" : "+student[u]+"<br>");
+		}
+		
+		
+		document.write("<br>");
+		
+		
+		let user = {name : "js", age : 20};
+		document.write(typeof user + "<br>");
+		document.write(user);
+		console.log(typeof user);
+		console.log(user);
+		document.write("<br>");
+		//property 읽기
+		document.write(user.name +"<br>");
+		document.write(user['name'] +"<br>");
+		let p_n = 'age';
+		document.write(user[p_n]+ "<br>"); //[]에서 ''가 없으면 변수를 찾는다.
+		document.write("<br>");
+		for(u in user){
+			document.write(u +" : "+ typeof u + "<br>");
+			document.write(user[u]+"<br>");
+		}
+		document.write("<br>");
+		
+		//객체 let user 프로퍼티 name : "js", age : 20 
+		user.age = 40;
+		for(u in user){ 
+			document.write(u +" : "+user[u]+"<br>");
+		}
+		document.write("<br>");
+		user.job = "programmer";
+		for(u in user){ 
+			document.write(u +" : "+user[u]+"<br>");
+		}
+		document.write("<br>");
+		document.write(user.job);
+		document.write("<br>");
+		
+		delete user.job;
+		document.write("<br>");
+		for(u in user){ 
+			document.write(u +" : "+user[u]+"<br>");
+		}
+		
+	</script>
+</body>
+</html>

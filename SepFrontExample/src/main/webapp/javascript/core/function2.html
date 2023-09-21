@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>function2</title>
+</head>
+<body>
+<script>
+	function ok(){alert("동의하셨습니다.");};
+	function cancel(){alert("취소하셨습니다.");};
+	
+	function ask(question, yes, no){//여기에 "동의하십니까?",ok,cancel를 넣는다.
+		if(confirm(question)){//confirm("동의하십니까?")로 질문해서 
+			yes();//true면 yes자리에 ok()를 넣었기 때문에 ok()함수가 실행된다.
+		}else{
+			no();//false면 no자리에 cancel()를 넣었기 때문에 cancel()함수가 실행된다.
+		}
+	}	
+	ask("동의하십니까?",ok,cancel);//변수로 메서드를 집어넣었다...
+</script>
+	
+</body>
+</html>

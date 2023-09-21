@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	let num = 10 - null;//원래 null은 문자열이지만 10과의 연산자가 붙었기 떄문에 숫자인 0으로 인식되어서 계산된다.
+	document.write(num + "<br>");
+	let num1 = 10 - undefined;// undefined는 숫자로 바뀌면 NaN으로 인식되기 때문에 10과의 연산을 하면 NaN이 된다.
+	document.write(num1 + "<br>");
+	let num2 = 10 - "";//빈문자열은 숫자로 바꾸면 0으로 인식된다.
+	document.write(num2 + "<br>");
+	
+	 
+	
+</script>
+</body>
+</html>
