@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+<body onload="tomorrow()"><!-- onload : body로딩 끝나면 바로 수행 -->
+	구입날짜:
+	<input type="date" id="pdate">
+	<button onclick="checkDate()">검사</button>
+	<script>
+		let today = new Date();
+		
+		function tomorrow() {	
+			let day = today.getDate() + 1;//오늘 날짜 +1로 내일을 뜻함
+			let tomo = new Date();
+			tomo.setDate(day);// 그걸 넣었음
+			let str = tomo.getFullYear() + "-"
+					+ ("0" + (tomo.getMonth() + 1)).slice(-2) + "-"//slice(-2)소숫점 앞자리 두자리 즉 정수 2자리
+					+ ("0" +tomo.getDate()).slice(-2);
+			console.log("내일::" + str);
+			document.getElementById("pdate").max = str;
+		}
+		
+		function checkDate() {
+			let s = document.getElementById("pdate").value;//String이기 때문에
+			let pdate = new Date(s);//데이트로 바꿔준다.
+
+			let diff = today - pdate.getTime();//밀리세컨드로 받아온다.
+			let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+			if (days > 30) {
+				alert("교환 기한이 지났습니다.");
+			}else{
+				if(confirm("교환하시겠습니까?")){
+					alert("교환신청되었습니다.");
+				}else{
+					alert("취소하였습니다.");
+				}
+			}
+		}
+	</script>
+</body>
+</html>
+

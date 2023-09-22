@@ -1,0 +1,13 @@
+<script>
+    let str = 'Like father, like son. like lila lias';
+ // like를 찾는다. i와 g는 옵션으로 insensitive, globally를 의미한다. 
+ //insensitive 대소문자 구별 안함
+ //globally 해당하는 항목 전체다 찾아냄
+ //match{/패턴(정규표현식)/옵션}
+    result = str.match(/li.{2}/ig);
+    document.writeln(result + '<br>');
+    // /li.{2}/ -> li 가 붙어있고 . -> 모든글자 {2} -> 2개
+    //즉 li로 시작하는 모든 두글자가 있는 것
+    
+    
+</script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Insert title here</title>
+</head>
+<style>
+	#msg{color: red;
+		font-size: small;
+	}
+	#msg2{color: rgb(0, 0, 255);
+	font-size: small;}
+</style>
+<body>
+	<input id="id" placeholder="한글 입력 안됨" />
+	<span id="msg"></span>
+	<span id="msg2"></span>
+	<br>
+	<input type="button" value="확인" onclick="input_check()">
+	<script>
+		function input_check() {
+			let value = document.getElementById("id").value;
+			let patt = /[ㄱ-ㅎㅏ-ㅣ가-힣]/g;
+			let temp = patt.test(value);
+			if (temp) {
+				document.getElementById("id").value = "";//입력한 값 지우기
+				alert("한글을 입력하지 마시오")
+				document.getElementById("msg").innerHTML = "한글을 입력하지 마시오";
+			} else {
+				document.getElementById("msg2").innerHTML = "확인";
+			}
+		}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

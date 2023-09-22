@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>달의 마지막 일 구하기</title>
+</head>
+<body>
+<script>
+	function getLastDayOfMonth(year, month){
+		let date = new Date(year, month, 0);
+		return date.getDate();
+		
+	}
+	document.write(getLastDayOfMonth(2022, 2)+"<br>");
+	document.write(getLastDayOfMonth(2020, 2)+"<br>");
+	document.write(getLastDayOfMonth(2022, 9)+"<br>");
+
+	
+</script>
+
+</body>
+</html>

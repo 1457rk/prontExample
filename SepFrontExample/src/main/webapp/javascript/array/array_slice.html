@@ -1,0 +1,24 @@
+﻿<script>
+	let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+	let newArray = numbers.slice(5);
+	let newArray1 = numbers.slice(1);
+	let newArray2 = numbers.slice(-2);
+	document.writeln(newArray + '<BR>');
+	document.writeln(numbers + '<BR>');
+	document.writeln(newArray1 + '<BR>');
+	document.writeln(newArray2 + '<BR>');
+
+	document.writeln(numbers + '<BR>');
+	document.writeln('<BR>');
+	let newArray3 = numbers.splice(1, 5);
+	document.writeln(newArray3 + '<BR>');
+	document.writeln(numbers + '<BR>');
+	
+	numbers.splice(1,0,100);//1번 인덱스에서 아무것도 꺼내지 않고 100을 집어넣겠다.
+	document.writeln(numbers + '<BR>');
+	numbers.splice(5,1,200);//5번 인덱스에서 값을 1개 꺼내고 200을 집어넣겠다.
+	document.writeln(numbers + '<BR>');
+	
+		
+		
+</script>
