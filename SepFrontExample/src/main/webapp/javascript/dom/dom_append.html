@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>dom_append</title>
+</head>
+<body>
+	<div id="target" onclick="addtext(' 동적으로 텍스트가 추가됩니다.')"
+		style="font: 20px bold;">여기를 클릭하세요.</div>
+	<script>
+		function addtext(t) {
+			if (document.createTextNode) {//택스트 노드를 만들 수 있는 지 없는지
+				let node = document.createTextNode(t);
+				document.getElementById("target").appendChild(node);
+			}
+		}
+	</script>
+</body>
+</html>

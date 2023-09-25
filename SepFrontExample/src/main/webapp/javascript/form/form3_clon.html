@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form name="form1" onsubmit="return checkInput()">
+		<label for="id">id</label>
+		<input id="id" placeholder="아이디를 입력해라" name="id"><br>
+		<label for="password">password</label>
+		<input id="password" type="password" name="password"><br>
+		<button type="submit">전송!</button>
+		
+	</form>
+	<script>
+		function checkInput(){
+			let form = document.form1;
+			if(!form.id.value){
+				alert("id 입력해라");
+				return false;
+			}if(!form.password.value){
+				alert("password 입력해라");
+				return false;
+			}else{return true}
+		}
+	</script>
+</body>
+</html>

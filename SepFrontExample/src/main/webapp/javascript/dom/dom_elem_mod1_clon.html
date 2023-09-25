@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<img id="image" src="pome.png" width="120">
+	<input type="button" onclick="changeImage()" value="사진바꾸기" />
+	<script>
+		function changeImage(){
+			document.getElementById("image").src = "poodle.png";
+			document.getElementById("image").title = "개";
+			alert(document.getElementById("image").src);
+		}
+	</script>
+</body>
+</html>

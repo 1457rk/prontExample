@@ -7,6 +7,9 @@
 	} */
 	//콜백함수에서 true를 리턴하는 요소만으로 배열 생성
 	let filtered = numbers.filter(
-			(element, index, array) => {return (element >= 30)});
+			(element, index, array) => {return (element >= 30)});//filter는 true면 그 값을 저장한다.
 	document.write("필터링 된 배열: " + filtered);
+	
+	let filteredTrue = numbers.filter((element, index, array) => {return true});
+	document.write("필터링 되지 않은 풀 배열: "+filteredTrue);
 </script>
