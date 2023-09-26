@@ -9,10 +9,14 @@
 	<form name="myform" action="noaction">
 		<h1>드라이브 선택</h1>
 		<p>
-			<input type="checkbox" name="drive" value="A" onclick="clickCheck(this)" id="A"><label for="A">A 드라이브</label><br>
-			<input type="checkbox" name="drive" value="B" onclick="clickCheck(this)" id="B"><label for="B">B 드라이브</label><br>
-			<input type="checkbox" name="drive" value="C" onclick="clickCheck(this)" id="C"><label for="C">C 드라이브</label><br>
-			<input type="checkbox" name="drive" value="D" onclick="clickCheck(this)" id="D"><label for="D">D 드라이브</label><br>
+			<input type="checkbox" name="drive" value="A" onclick="Sibling(this)" id="A"><label for="A">A 드라이브</label>
+			<span id="AA"></span><br>
+			<input type="checkbox" name="drive" value="B" onclick="clickCheck(this)" id="B"><label for="B">B 드라이브</label>
+			<span id="BB"></span><br>
+			<input type="checkbox" name="drive" value="C" onclick="clickCheck(box)" id="C"><label for="C">C 드라이브</label>
+			<span id="CC"></span><br>
+			<input type="checkbox" name="drive" value="D" onclick="clickCheck(box)" id="D"><label for="D">D 드라이브</label>
+			<span id="DD"></span><br>
 		</p>
 		<p>
 			<button type="button" onclick="checkedBox()">선택된 체크박스 확인하기</button>
@@ -36,6 +40,23 @@
 				alert(box.value + "드라이브 선택");
 			} else {
 				alert(box.value + "드라이브 선택 해제");
+			}
+		}
+		function Sibling(box){
+			let text = "선택됨";
+			if (box.checked) {
+				if(box.value == 'A'){
+					document.getElementById("AA").innerHTML = text;
+				}else if (box.value == 'B'){
+					document.getElementById("BB").innerHTML = text;
+				}else if (box.value == 'C'){
+					document.getElementById("CC").innerHTML = text;
+				}else if (box.value == 'D'){
+					document.getElementById("DD").innerHTML = text;
+				}
+				
+			} else {
+				document.getElementById("AA").innerHTML = " ";
 			}
 		}
 	</script>

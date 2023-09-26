@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<p id="first"><strong> 변경후</strong></p>
+	<p id="second"> 변경전</p>
+
+</body>
+<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+	$(function(){
+		$("p#second").html($("p#first").html());
+	});
+	
+</script>
+</html>

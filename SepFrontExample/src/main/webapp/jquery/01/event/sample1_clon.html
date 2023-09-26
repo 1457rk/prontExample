@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>화면을 변경</button>
+	<p>
+		<img src="flower.jpg" alt="꽃" />
+	</p>
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function(){
+			$("button").click(function(){
+				$("img").attr("src","sea.jpg")
+						.attr("alt","바다");
+			});// click이벤트 
+			
+			
+		});//ready function
+		
+	</script>
+</body>
+</html>
