@@ -1,10 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-	<title>sample14</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body>
 	스킬:
 	<input type="checkbox" name="xhtml" value="XHTML" id="xhtml" />
@@ -16,20 +15,22 @@
 	<input type="checkbox" name="php" value="PHP" id="php" />
 	<label for="php">PHP</label>
 	<p>
-		<button>전부체크</button>
+		<button id="check">전부체크</button><br>
+		<button id="noncheck">체크해제</button>
 	</p>
 
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(function () {
-			$("button").click(function () {
-				//checkbox의 checked속성은 prop() 사용
-				$(":checkbox").prop("checked", true);
-				//$(":checkbox").attr("checked","checked");
-			});
+		$(function (){
+			$("button[id='check']").click(function(){
+				$(":checkbox").prop("checked",true);
+			})
+			$("button[id='noncheck']").click(function(){
+				$(":checkbox").prop("checked",false);
+		});
 		});
 	</script>
 
-</body>
 
+</body>
 </html>

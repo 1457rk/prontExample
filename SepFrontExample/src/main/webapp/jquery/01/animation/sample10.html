@@ -1,40 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
+
+<head>
 	<title>sample10 </title>
-		<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<style type="text/css">
-p{
-	width:800px;
-	height:267px;
-	margin:0;
-}
-div{
-	width:400px;
-	height:267px;
-	overflow:hidden;
-}
-		</style>
-		<script>
-$(function(){
-	$("#flower").click(function(){
-		$("p:not(:animated)").animate({
-			marginLeft : "-400px" 
-		},"slow","swing");
-	});
-	$("#building").click(function(){
-		$("p:not(:animated)").animate({
-			marginLeft : "0" 
-		},"slow","swing");
-	});
-});
-		</script>
-	</head>
-	<body>
-		<div><p><img src="flower.jpg" alt="flower" id="flower" /><img src="building.jpg" alt="building" id="building" /></p></div>
-	</body>
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<style type="text/css">
+		p {
+			width: 1200px;
+			height: 267px;
+			margin: 0;
+		}
+
+		div {
+			width: 400px;
+			height: 267px;
+			overflow: hidden;
+		}
+
+		img {
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		$(function () {
+			$("#flower").click(function () {
+				$("p:not(:animated)").animate({
+					marginLeft: "-400px"
+				}, "slow", "swing");
+			});
+			$("#building").click(function () {
+				$("p:not(:animated)").animate({
+					marginLeft: "-800"
+				}, "slow", "swing");
+			});
+			$("#bear").click(function () {
+				$("p:not(:animated)").animate({
+					marginLeft: "0"
+				}, "slow", "swing");
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div>
+		<p><img src="flower.jpg" alt="flower" id="flower" /><img src="building.jpg" alt="building" id="building" /><img
+				src="bear.jpg" alt="bear" id="bear" /></p>
+	</div>
+</body>
+
 </html>
-
-
-
-

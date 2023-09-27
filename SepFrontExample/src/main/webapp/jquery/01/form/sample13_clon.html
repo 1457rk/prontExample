@@ -1,10 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-	<title>sample13</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body>
 
 	성별:
@@ -15,14 +14,13 @@
 	
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(function () {
-			$(":radio").change(function () {
-				$("label").css("font-weight", "");
-				$("label[for='" + $(this).attr("id") + "']")
-					.css("font-weight", "bold");
+		$(function (){
+			$(":radio").change(function (){
+				$("label").css("font-weight","");
+				$("label[for=' " + $(this).attr("id") + " ']")
+				.css("font-weight","bold");
 			});
 		});
 	</script>
 </body>
-
 </html>

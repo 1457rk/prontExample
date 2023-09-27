@@ -1,11 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-	<title>sample9</title>
-
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body>
 	<dl>
 		<dt> 이름<em>(필수)</em></dt>
@@ -31,14 +29,18 @@
 	
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(function () {
-			$(":input").focus(function () {
+		$(function (){
+			$(":input").focus(function(){
 				$(this).css("background", "#DFEEFF");
-			}).blur(function () {
-				$(this).css("background", "");
-			});
+			})
+					   .blur(function(){
+						   $(this).css("background", "");
+					   });
 		});
+		
+		
+		
 	</script>
+	
 </body>
-
 </html>

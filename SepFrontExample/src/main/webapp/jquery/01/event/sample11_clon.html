@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img{
+		opacity: 0.2;
+	}
+</style>
+</head>
+<body>
+	<img src="flower.jpg" alt="꽃" />
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function(){
+			$("img").mouseover(function(){
+				$(this).attr("src","sea.jpg").attr("alt","바다").css("opacity","1.0");
+			})
+			.mouseout(function(){
+				$(this).attr("src","flower.jpg").attr("alt","꽃").css("opacity","0.2");
+			});
+		});
+		
+	</script>
+
+</body>
+</html>

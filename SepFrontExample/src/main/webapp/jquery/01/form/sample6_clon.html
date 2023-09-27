@@ -1,13 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
 <head>
-	<title>sample6</title>
-
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
-
 <body>
-	신청자：
+	신청자 : 
 	<select>
 		<option value=" 이름">개인</option>
 		<option value="회사명">법인</option>
@@ -16,20 +14,18 @@
 		<span>이름</span>
 		<input type="text" />
 	</p>
-
-
+		
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-		$(function () {
-			$("select").change(function () {
+		$(function (){
+			$("select").change(function(){
 				$("span").text($(this).val());
 			});
-			//blur 발생 -> 기존 값과 현재값을 비교 다르면 이벤트 발생하고 같으면 이벤트 발생하지 않음
-			$("input").change(function(){
-				alert($(this).val());
-			});
 		});
-	</script>
+		
+		
+	</script>		
+	
+		
 </body>
-
 </html>

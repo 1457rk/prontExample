@@ -2,14 +2,14 @@
 <html>
 <head>
 <title>sample8</title>
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script>
 	$(function() {
 		$("a").dblclick(
 				function() {
-					$("img").attr("src", $(this).attr("href"))
-							.attr("alt",$(this).text());
-				})
+					$("img").attr({src:$(this).attr("href"),alt:$(this).text()});
+				})//.attr("src", $(this).attr("href"))
+					//.attr("alt",$(this).text());
 			 	.click(function() {
 					return false;
 		}); 
