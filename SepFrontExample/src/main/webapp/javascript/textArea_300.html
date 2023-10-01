@@ -9,7 +9,6 @@
 		function txtAMaxlength() {
 			//textarea의 글자 수를 300으로 제한
 			//넘치는 순간 alert창으로 '글자수는 300자 제한입니다.'메세지 출력 
-			
 		}
 	</script>
 	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -17,13 +16,10 @@
 		$(function(){
 			$("textarea").on("keyup",(function(){
 				var textLen = $("textarea").val().length;
-				$("span").text(textLen);
+				$("span").text(textLen)
+				if($(textLen) > 300)
+				alert("글자수는 300자 제한입니다.")
 			}));
-			if($("textarea").val().length > 300){
-				alert("글자수는 300자 제한입니다.");
-				$("textarea").val().slice(0,300);
-			}
-		});
 	</script>
 </head>
 
