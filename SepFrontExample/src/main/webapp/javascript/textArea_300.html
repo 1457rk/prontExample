@@ -16,10 +16,13 @@
 		$(function(){
 			$("textarea").on("keyup",(function(){
 				var textLen = $("textarea").val().length;
+				if(textLen <= 300){
 				$("span").text(textLen)
-				if($(textLen) > 300)
+				}else if(textLen > 300){
 				alert("글자수는 300자 제한입니다.")
-			}));
+				$("textarea").val($("textarea").val().slice(0,300));
+				}
+			}))})
 	</script>
 </head>
 
