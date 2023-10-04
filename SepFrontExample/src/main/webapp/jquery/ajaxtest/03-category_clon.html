@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- 공통 css -->
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/common.css" />
+
+	<style type="text/css">
+		/** 빈 요소를 숨김. 각 span안에 드롭다운을 출력하게 됨 */
+		form>span {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">동적 드롭다운</h1>
+	<div class="exec">
+		<form>
+			<!-- 각 단계별 dropdown을 표시할 span태그 -->
+			<span id="category1"></span>
+			<span id="category2"></span>
+			<span id="category3"></span>
+		</form>
+	</div>
+	<!-- 최종 선택 결과를 표시할 곳 -->
+	<div class="console"></div>	
+	
+
+
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<!-- 사용자 스크립트 블록 -->
+	<script>
+		$(function(){
+			$("#category1").load("ajax/text/category-data.html #category1-1",
+			function(){
+				$(this).show();
+			});
+			$(document).on("change", "#category1 > select", function(){
+				$("#category2").empty().hide();
+				$("#category3").empty().hide();
+				var target = $(this).find("option:selected").attr("data-target");
+				var selector = "ajax/text/category-data.html " + target;
+				$("#category2").load(selector,function(){
+					$(this).show();
+				});
+			});
+			$(document).on("change", "#category2 > select", function(){
+				$("#category3").empty().hide();
+				var target = $(this).find("option:selected").attr("data-target");
+				var selector = "ajax/text/category-data.html " + target;
+				$("#category3").load(selector,function(){
+					$(this).show();
+				});
+			});
+			$(document).on("change", "#category3 > select", function(){
+				if($(this).find("option:selected").index() > 0){
+					var data1 = $("#category1 > select > option:selected").val();
+					var data2 = $("#category2 > select > option:selected").val();
+					var data3 = $(this).find("option:selected").val();
+					$(".console").html(data1 + "&gt; " + data2 + "&gt; " + data3);
+				}
+			});
+			
+		});
+	</script>
+</body>
+</html>

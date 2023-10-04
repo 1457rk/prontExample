@@ -1,31 +1,25 @@
 <!DOCTYPE html>
 <html>
-	<head>
+
+<head>
 	<title>sample3 </title>
-		<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<script>
-$(function(){
-	$.ajax({
-		url: 'sample3.xml',
-		dataType: 'xml',
-		success : function(data){
-			$("item",data).each(function(){
-				$("dl").append("<dt><a href='"+$("link",this).text()+"'>"+$("title",this).text()+"</a></dt><dd>"+$("description",this).text()+"</dd>");
+</head>
+<body>
+	<dl></dl>
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(function () {
+			$.ajax({
+				url: 'sample3.xml',
+				dataType: 'xml', // text로 가져오는데 xml객체로 바꿔준다.
+				success: function (data) {
+					$("item", data).each(function () {//가져온 데이터 안에서 item이라는 태그를 찾는다. 여러개 있어서 각각 꺼내온다.
+						$("dl").append("<dt><a href='" + $("link", this).text() + "'>" + $("title", this).text() + "</a></dt><dd>" + $("description", this).text() + "</dd>");
+					});
+				}
 			});
-		}
-	});
-});
-		</script>
-	</head>
-	<body>
-		<dl></dl>
-	</body>
+		});
+	</script>	
+</body>
+
 </html>
-
-
-
-
-
-
-
-
