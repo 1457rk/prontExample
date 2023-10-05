@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>click</button>
+	<table border="1">
+		<thead>
+			<tr><th>이름</th><th>나이</th><th>성별</th></tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+		
+	</table>
+	<div id="result"></div>
+	
+	
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function(){
+			let url = "getMapPerson.jsp"
+			$("button").one("click", function(){
+				$.getJSON(url,function(people){
+					for(p in people){
+						let person = people[p];
+						//console.log(person);
+						$("tbody").append("<tr>");
+						$("tbody").append(`<td>${person.name}</td><td>${person.age}</td><td>${person.gender}</td>`);
+						$("tbody").append("</tr>");
+					}
+				})
+			});
+		});
+		
+		
+		
+		
+		
+			
+	</script>
+</body>
+</html>

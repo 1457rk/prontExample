@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>list 출력</title>
+</head>
+<body>
+	<button>click</button>
+	<div id="result"></div>
+	<div id="result1"></div>
+	<div id="result2"></div>
+	<div id="result3"></div>
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		
+		let url ="data.jsp"
+		// button 클릭시 
+		//ajax로 data.jsp요청 -> 받아온 데이터 #result에 출력
+		//1
+		$(function(){//1
+			$("button").one("click", function(){
+				$.getJSON(url, function(data){
+					$.each(data, function(index, data2){
+						$("#result").append(index +" : "+ data2 +"<br>");
+					});
+				});
+			});
+		});//ready
+		
+		
+		$(function(){//2
+			$("button").one("click", function(){
+				$.ajax({
+					url: "data.jsp",
+					method: "get",
+					dataType: "json"
+				}).done(function(data){
+					//$.each(data, function(i, name){
+					//	$("#result").append(name+"<br>");
+					//})
+					$(data).each(function(i, name){
+						$("#result1").append(name+",");
+					})
+					for(i = 0; i < data.length; i++){
+						$("#result2").append(data[i]+":");
+					}
+					for(i in data){
+						$("#result3").append(data[i]+"+");
+					}
+				}).fail(function (xhr, textStatus, errorThrown) {
+						$("div").html("<div>" + textStatus + " (HTTP-" + xhr.status + " / " + errorThrown + ")</div>");
+				});
+			});	
+		});
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>영화인 검색</title>
+	<style>
+		#firstP {
+			font-size: small;
+			color: rgb(187, 187, 187);
+		}
+
+		#add1 {
+			font-size: small;
+			color: burlywood;
+		}
+
+		.peopleCd {
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" id="search">
+	<button id="mybtn">검색</button>
+	<div>
+		<p id="firstP"><span id="pdate"></span> 검색 결과</p>
+		<div id="result"></div>
+	</div>
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function () {
+			$("#search").focus();
+			$("#mybtn").click(function () {
+				if (!$("#search").val()) {
+					alert("이름을 검색하세요");
+					$("#search").focus();
+					return false;
+				}
+				$("#pdate").text($("#search").val());
+				let peopleNm = $("#search").val();
+				let url = "https://kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleList.json?key=f5eef3421c602c6cb7ea224104795888";
+				$.getJSON(url, {"peopleNm": peopleNm}, function (actors) {
+					$("#result").empty();
+					//peopleNm repRoleNm filmoNames
+					let actorResult = actors.peopleListResult.peopleList;
+					$.each(actorResult, function (index, actor) {
+						$("#result").append(
+							`<p id="${actor.peopleCd}" class="peopleCd">
+							이름 : ${actor.peopleNm} <br> 
+							직업/역할 : ${actor.repRoleNm} <br>
+							<hr>
+							</p>`
+						);//append
+					});//each
+				});//getJSON
+			});//click
+			$("#result").on("click", "p[id]", function () {
+				$("div", this).remove();
+
+				let peopleCd = $(this).attr("id");
+				let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/people/searchPeopleInfo.json?key=f5eef3421c602c6cb7ea224104795888";
+				$.getJSON(url, {"peopleCd": peopleCd}, function (people) {
+					//console.log(movie.movieInfoResult.movieInfo.movieCd);
+					//console.log(movie.movieInfoResult.movieInfo.movieNm);
+					let p = people.peopleInfoResult.peopleInfo.filmos;
+					$("#" + peopleCd).append("<div>참여작품 : <br></div>")
+					$.each(p, function (index, plmo) {
+						$("#" + peopleCd).append(
+							`<div id="add1">
+							${plmo.movieNm} 
+							</div>`
+						);//append
+					});//each
+				});//getJSON
+			});//on p_click
+
+		});//ready
+	</script>
+
+
+
+
+</body>
+
+</html>

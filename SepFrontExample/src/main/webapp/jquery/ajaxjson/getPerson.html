@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<button>click</button>
+	<div id="result"></div>
+	
+	<script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script>
+		$(function(){
+			let url = "getPerson.jsp"
+			$("button").one("click", function(){
+				$.getJSON(url, function(data){
+					$("#result").append("번호:이름, 나이 , 성별 <br>")
+					$.each(data, function(index, data2){
+						$("#result").append(index + " : " + data2.name + ", " + data2.age +", " + data2.gender + "<br>");
+					});
+				});
+			});
+		});//ready	
+		
+		
+		
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>주소 api</title>
+	<style>
+		span {
+			display: none;
+			color: red;
+			font-size: small;
+		}
+	</style>
+</head>
+
+<body>
+	<form>
+		<label for="zip">우편번호</label>
+		<input name="zipcode" id="zip">
+		<input type="button" value="우편번호 검색" onclick="postcode()">
+		<br>
+		<label for="addr">도로명주소</label>
+		<input name="address" id="addr">
+		<input name="address_detail" placeholder="상세주소입력">
+		<span id="ne"><-이거 입력 안하면 내가 가진다.</span>
+		<br>
+		<input type="submit" value="써밋">
+
+	</form>
+
+	<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script>
+		function postcode() {
+			new daum.Postcode({
+				oncomplete: function (data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분입니다.
+					// 예제를 참고하여 다양한 활용법을 확인해 보세요.
+					//zonecode
+					document.querySelector("#zip").value = data.zonecode;
+					document.querySelector("#addr").value = data.roadAddress;
+					document.querySelector("#ne").style.display = "inline";
+				}
+			}).open();
+		}
+	</script>
+</body>
+
+</html>
