@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div class="console" id="result"></div>
+	<script>
+		 function asynctest() {
+			 fetch('sample5_load.json')
+				.then(resp => resp.json())//응답객체를 받아오기 때문에 그중 json만을 따로 받아온다 .
+				.then(json => {//앞의 json을 가지고 처리한다.
+					let emp = "";
+					json.employees.forEach((item) => {
+						emp += "<h2>" + item.firstName + "  " + item.lastName + "</h2>";
+					})//foreach
+					document.querySelector(".console").innerHTML = emp;
+				});
+		}
+		asynctest();
+		
+	</script>
+</body>
+
+</html>

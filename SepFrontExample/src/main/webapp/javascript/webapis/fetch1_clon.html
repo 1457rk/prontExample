@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="console" id="result"></div>
+	<script>
+		async function asynctest(){
+			await fetch('sample5_load.json')//Promise객체 생성 fulfilled -> .then(function(data){})
+			.then(function(resp){// 헤더와 제이슨택스트를 둘다 가져온다.
+				return resp.json();//그중 제이슨택스트만 리턴한다.
+			})
+			.then(function(json){//제이슨 택스트를 리턴받으면 함수가 실행된다.
+				let emp = "";
+				json.employees.forEach(function(item){
+					emp += "<h2>"+item.firstName+ "  "+item.lastName + "</h2>";
+				})
+				document.querySelector(".console").innerHTML = emp;
+			});
+			/*(json => {
+				let emp = "";
+				json.employees.forEach((item) => {
+					emp += "<h2>"+item.firstName+ "  "+item.lastName + "</h2>";
+				})
+				document.querySelector(".console").innerHTML = emp;
+			});*/
+			document.querySelector(".console").innerHTML = "TESt";
+			
+		};
+		asynctest();
+		
+		
+	</script>
+	
+</body>
+</html>
