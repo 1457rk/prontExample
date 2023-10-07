@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="console" id="result"></div>
+	<script>
+		async function asynctest(){
+			await fetch('sample5_load.json')
+			.then(function(resp){
+				return resp.json();
+			})
+			.then(function(json){
+				let emp ="";
+				json.employees.forEach(function(item){
+					emp += "<h2>" + item.firstName + "  "+ item.lastName + "</h2>";
+				})
+				document.querySelector(".console").innerHTML = emp;
+			});
+		};
+		asynctest();
+		
+		
+		
+		
+	</script>
+	
+	
+	
+</body>
+</html>
