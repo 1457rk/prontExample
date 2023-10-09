@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	
+<script>
+	var relationship1={
+		name: 'zero',
+		friends: ['nero', 'hero', 'xero'],
+		logFriends: function(){
+			var that = this;
+			this.friends.forEach(function (friend){
+				console.log(that.name, friend);
+			});
+		},
+	};
+	relationship1.logFriends();
+	
+	const candyMachine = {
+		status: {
+			name: 'node',
+			const: 5,
+		},
+		getCandy(){
+			this.status.const--;
+			return this.status.const;
+		},
+	};
+	const{getCandy, status:{count}}= candyMachine;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</script>
+</body>
+</html>
