@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>부서정보 변경</title>
+    <style>
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        table th,
+        table td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="selection">
+        <table id="user-list">
+            <thead>
+                <tr>
+                    <th>부서번호</th>
+                    <th>부서명</th>
+                    <th>근무지</th>
+                </tr>
+    
+            </thead>
+            <tbody>
+                {% for dept in depts %}
+                <tr>
+                    <td id="deptno_sel">{{dept.deptno}}</td>
+                    <td>{{dept.dname}}</td>
+                    <td>{{dept.loc}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+    <div id="formarea">
+        <form action="submit_change" method="post">
+            부서번호 : <input name="deptno" id="deptno_submit"><br>
+            부서명 : <input name="dname" placeholder="부서명"><br>
+            근무지 : <input name="loc" placeholder="근무지"><br>
+            <input type="submit" value="변경"><button onclick="">취소</button>
+        </form>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+            $(function(){
+                $('#deptno_sel').click(function(){
+                    var deptno = $('#deptno_sel').text();
+                    $('#deptno_submit').attr('value',deptno);
+                });
+            });
+    </script>
+</body>
+
+</html>
